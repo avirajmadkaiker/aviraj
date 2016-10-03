@@ -455,5 +455,7 @@ public class Controller {
         Configuration retVal = new Configuration();
         retVal.setClassForTemplateLoading(Controller.class, "/freemarker");
         return retVal;
-    }
+   
+//End of method
+ }
 }
