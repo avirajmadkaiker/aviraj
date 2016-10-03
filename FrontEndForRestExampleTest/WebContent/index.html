@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Today's welcome message is:</p>
+
+<h1>{{myWelcome.title+ ', ' +myWelcome.ibdb}}</h1>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    $http({
+        method : "GET",
+        url : "http://localhost:8080/RestfulExampleTest/rest/hello/iceage"
+    }).then(function mySucces(response) {
+        $scope.myWelcome = response.data;
+    }, function myError(response) {
+        $scope.myWelcome = response.statusText;
+    });
+});
+</script>
