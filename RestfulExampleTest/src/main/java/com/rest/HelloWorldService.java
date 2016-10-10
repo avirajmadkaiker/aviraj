@@ -16,14 +16,14 @@ public class HelloWorldService {
 	@Path("/{param}")
 	public Response getMsg(@PathParam("param") String title) {
 		//String output = "Jersey say : " + title;
-		String res = mCall.readByImdb(title);
+		String res = mCall.getMovieByImdb(title);
 		return Response.status(200).entity(res).build();
 
 	}
 	
 	@GET
 	@Path("/string/{param}")
-	public String getMsgString(@PathParam("param") String title) {
+	public String getMsgStr(@PathParam("param") String title) {
 		String output = "Jersey say : " + title;
 		return output;
 

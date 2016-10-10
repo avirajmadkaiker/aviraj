@@ -25,7 +25,9 @@ public class MongoDbCall {
 	    movieCollection = movieDatabase.getCollection(collectionName);
 	}
 	
-	public String readByImdb(final String title) {
+	//Get movie details by imdb
+	//testing
+	public String getMovieByImdb(final String title) {
 		final List<Document> movie = new ArrayList<Document>();
 		FindIterable<Document> iterable = movieCollection.find(new Document("title", title));
 		iterable.forEach(new Block<Document>() {
